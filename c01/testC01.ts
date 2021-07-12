@@ -39,7 +39,7 @@ async function ex01() {
 	const file = 'ft_ultimate_ft';
 	console.log('Testando ' + folder + '... 🕒');
 
-	const { stdout, stderr } = await exec('cat '+data.nameUser+'/'+folder+'/'+file+'.c | grep "void	ft_ultimate_ft"');
+	const { stdout, stderr } = await exec('cat ' + data.nameUser + '/' + folder + '/' + file + '.c | grep "void	ft_ultimate_ft"');
 
 	var response = stdout.substring(stdout.indexOf("*"));
 	let count = 0;
@@ -51,7 +51,7 @@ async function ex01() {
 
 	// Tratando condicoes
 	count == 9 ?
-		console.log(''+project+' - ' + folder + ' - OK! ✅') : console.log('' + folder + ' - ERROR (Não contém 9 caracteres) ❗️');
+		console.log('' + project + ' - ' + folder + ' - OK! ✅') : console.log('' + folder + ' - ERROR (Não contém 9 caracteres) ❗️');
 	console.log("#Stdout: '" + stdout + "'");
 	if (stderr) console.log('Encontrado erros: ' + stderr + ' ❌');
 };
@@ -70,12 +70,12 @@ async function ex02() {
 		if (stderr) console.log('stderr:', stderr);
 
 		exec('./' + file + ' "' + data.paramsEx02.a + '" "' + data.paramsEx02.b + '"',
-		(error, stdout, stderr) => {
+			(error, stdout, stderr) => {
 
-			// Tratando condicoes
-			(stdout == data.paramsEx02.b,data.paramsEx02.a) ? console.log(data.paramsEx02.a,data.paramsEx02.b + ' foi alterado para ' + stdout + ' ✅') : console.log(stdout + ' ❌ RETORNOU DIFERENTE...');
-			if (error || stderr) console.log('Encontrado erros com o parametro: ' + stdout +' ❌');
-		});
+				// Tratando condicoes
+				(stdout == data.paramsEx02.b, data.paramsEx02.a) ? console.log(data.paramsEx02.a, data.paramsEx02.b + ' foi alterado para ' + stdout + ' ✅') : console.log(stdout + ' ❌ RETORNOU DIFERENTE...');
+				if (error || stderr) console.log('Encontrado erros com o parametro: ' + stdout + ' ❌');
+			});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
 		console.error(err);
@@ -96,17 +96,17 @@ async function ex03() {
 		if (stderr) console.log('stderr:', stderr);
 
 		exec('./' + file + ' "' + data.paramsEx03.a + '" "' + data.paramsEx03.b + '"',
-		(error, stdout, stderr) => {
+			(error, stdout, stderr) => {
 
-			let div = data.paramsEx03.a / data.paramsEx03.b;
-			let rest = data.paramsEx03.a % data.paramsEx03.b;
-			var stdout = stdout.split(',');
-			// Tratando condicoes
-			((stdout[0] == (Math.trunc(div).toString())) && (stdout[1] == (Math.trunc(rest).toString()))) ?
-			console.log( 'Divisão: ' + Math.trunc(div).toString() + ', Resto: '+Math.trunc(rest).toString()+' ✅') :
-			console.log(stdout + ' ❌ RETORNOU DIFERENTE...');
-			if (error || stderr) console.log('Encontrado erros com o parametro: ' + stdout +' ❌');
-		});
+				let div = data.paramsEx03.a / data.paramsEx03.b;
+				let rest = data.paramsEx03.a % data.paramsEx03.b;
+				var stdout = stdout.split(',');
+				// Tratando condicoes
+				((stdout[0] == (Math.trunc(div).toString())) && (stdout[1] == (Math.trunc(rest).toString()))) ?
+					console.log('Divisão: ' + Math.trunc(div).toString() + ', Resto: ' + Math.trunc(rest).toString() + ' ✅') :
+					console.log(stdout + ' ❌ RETORNOU DIFERENTE...');
+				if (error || stderr) console.log('Encontrado erros com o parametro: ' + stdout + ' ❌');
+			});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
 		console.error(err);
@@ -127,22 +127,49 @@ async function ex04() {
 		if (stderr) console.log('stderr:', stderr);
 
 		exec('./' + file + ' "' + data.paramsEx04.a + '" "' + data.paramsEx04.b + '"',
-		(error, stdout, stderr) => {
+			(error, stdout, stderr) => {
 
-			let div = data.paramsEx04.a / data.paramsEx04.b;
-			let rest = data.paramsEx04.a % data.paramsEx03.b;
-			var stdout = stdout.split(',');
+				let div = data.paramsEx04.a / data.paramsEx04.b;
+				let rest = data.paramsEx04.a % data.paramsEx03.b;
+				var stdout = stdout.split(',');
 
-			console.log(stdout[0]);
-			console.log(stdout[1]);
-			console.log(div);
-			console.log(rest);
+				console.log("A = ", stdout[0]);
+				console.log("B = ", stdout[1]);
+				console.log("Divisao = ", div);
+				console.log("Resto = ", rest);
 
-			// Tratando condicoes
-			((stdout[0] == (Math.trunc(div).toString())) && (stdout[1] == (Math.trunc(rest).toString()))) ?
-			console.log( 'Divisão: ' + Math.trunc(div).toString() + ', Resto: '+Math.trunc(rest).toString()+' ✅') :
-			console.log(stdout + ' ❌ RETORNOU DIFERENTE...');
-			if (error || stderr) console.log('Encontrado erros com o parametro: ' + stdout +' ❌');
+				// Tratando condicoes
+				((stdout[0] == (Math.trunc(div).toString())) && (stdout[1] == (Math.trunc(rest).toString()))) ?
+					console.log('Divisão: ' + Math.trunc(div).toString() + ', Resto: ' + Math.trunc(rest).toString() + ' ✅') :
+					console.log(stdout + ' ❌ RETORNOU DIFERENTE...');
+				if (error || stderr) console.log('Encontrado erros com o parametro: ' + stdout + ' ❌');
+			});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX05 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex05() {
+	const folder = 'ex05';
+	const file = 'ft_putstr';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+
+		await data.paramsEx05.forEach(param => {
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
+					// Tratando condicoes
+					(stdout == param) ? console.log(param + ' é igual à ' + stdout + ' ✅') : console.log(param + ' ❌ RETORNOU DIFERENTE...');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param);
+				});
 		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
@@ -205,6 +232,10 @@ setTimeout(async () => {
 				setTimeout(async () => {
 					space();
 					ex04();
+					setTimeout(async () => {
+						space();
+						ex05();
+					}, 800);
 				}, 800);
 			}, 800);
 		}, 800);
