@@ -4,7 +4,7 @@ const data = {
     paramsEx01: [3],
     paramsEx02: {a: 8, b: 6},
     paramsEx03: {a: 12, b: 42},
-    paramsEx04: [3, 90, -2, 1, 0],
+    paramsEx04: {a: 80, b: 42},
     paramsEx05: null,
     paramsEx06: null,
     paramsEx07: [-1, 250, 2147483647, -2147483648, 42424242, 2147483648],

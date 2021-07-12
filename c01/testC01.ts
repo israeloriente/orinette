@@ -113,6 +113,43 @@ async function ex03() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX04 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex04() {
+	const folder = 'ex04';
+	const file = 'ft_ultimate_div_mod';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+
+		exec('./' + file + ' "' + data.paramsEx04.a + '" "' + data.paramsEx04.b + '"',
+		(error, stdout, stderr) => {
+
+			let div = data.paramsEx04.a / data.paramsEx04.b;
+			let rest = data.paramsEx04.a % data.paramsEx03.b;
+			var stdout = stdout.split(',');
+
+			console.log(stdout[0]);
+			console.log(stdout[1]);
+			console.log(div);
+			console.log(rest);
+
+			// Tratando condicoes
+			((stdout[0] == (Math.trunc(div).toString())) && (stdout[1] == (Math.trunc(rest).toString()))) ?
+			console.log( 'Divisão: ' + Math.trunc(div).toString() + ', Resto: '+Math.trunc(rest).toString()+' ✅') :
+			console.log(stdout + ' ❌ RETORNOU DIFERENTE...');
+			if (error || stderr) console.log('Encontrado erros com o parametro: ' + stdout +' ❌');
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX01 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // async function ex01() {
 // 	const folder = 'ex01';
@@ -165,6 +202,10 @@ setTimeout(async () => {
 			setTimeout(async () => {
 				space();
 				ex03();
+				setTimeout(async () => {
+					space();
+					ex04();
+				}, 800);
 			}, 800);
 		}, 800);
 	}, 800);
