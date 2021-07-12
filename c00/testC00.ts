@@ -7,7 +7,7 @@ const project = 'C00';
 async function ex00() {
 	const folder = 'ex00';
 	const file = 'ft_putchar';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -35,7 +35,7 @@ async function ex00() {
 async function ex01() {
 	const folder = 'ex01';
 	const file = 'ft_print_alphabet';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -71,7 +71,7 @@ async function ex01() {
 async function ex02() {
 	const folder = 'ex02';
 	const file = 'ft_print_reverse_alphabet';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -107,7 +107,7 @@ async function ex02() {
 async function ex03() {
 	const folder = 'ex03';
 	const file = 'ft_print_numbers';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -142,7 +142,7 @@ async function ex03() {
 async function ex04() {
 	const folder = 'ex04';
 	const file = 'ft_is_negative';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -176,7 +176,7 @@ async function ex04() {
 async function ex05() {
 	const folder = 'ex05';
 	const file = 'ft_print_comb';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -214,7 +214,7 @@ async function ex05() {
 async function ex06() {
 	const folder = 'ex06';
 	const file = 'ft_print_comb2';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -257,7 +257,7 @@ async function ex06() {
 async function ex07() {
 	const folder = 'ex07';
 	const file = 'ft_putnbr';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -289,7 +289,7 @@ async function ex07() {
 async function ex08() {
 	const folder = 'ex08';
 	const file = 'ft_print_combn';
-	console.log('Testando ' + folder + '...');
+	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -348,6 +348,7 @@ async function ex08() {
 
 
 console.log('INICIANDO ORINETE...');
+console.log('Desenvolvedor: '+ data.nameUser);
 
 setTimeout(async () => {
 	space();
