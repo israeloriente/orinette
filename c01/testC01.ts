@@ -177,6 +177,35 @@ async function ex05() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX06 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex06() {
+	const folder = 'ex06';
+	const file = 'ft_strlen';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+
+		await data.paramsEx06.forEach(param => {
+
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
+					// Tratando condicoes
+					(stdout == param.length) ? console.log(param + ' tem ' + stdout + ' caracteres ✅') :
+					console.log(param + ' RETORNOU '+stdout+' caracteres DIFERENTE... ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param);
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX01 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // async function ex01() {
 // 	const folder = 'ex01';
@@ -216,31 +245,31 @@ async function ex05() {
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
-
-setTimeout(async () => {
-	space();
-	ex00();
-	setTimeout(async () => {
-		space();
-		ex01();
-		setTimeout(async () => {
-			space();
-			ex02();
-			setTimeout(async () => {
-				space();
-				ex03();
-				setTimeout(async () => {
-					space();
-					ex04();
-					setTimeout(async () => {
-						space();
-						ex05();
-					}, 800);
-				}, 800);
-			}, 800);
-		}, 800);
-	}, 800);
-}, 800);
+ex06();
+// setTimeout(async () => {
+// 	space();
+// 	ex00();
+// 	setTimeout(async () => {
+// 		space();
+// 		ex01();
+// 		setTimeout(async () => {
+// 			space();
+// 			ex02();
+// 			setTimeout(async () => {
+// 				space();
+// 				ex03();
+// 				setTimeout(async () => {
+// 					space();
+// 					ex04();
+// 					setTimeout(async () => {
+// 						space();
+// 						ex05();
+// 					}, 800);
+// 				}, 800);
+// 			}, 800);
+// 		}, 800);
+// 	}, 800);
+// }, 800);
 
 
 
