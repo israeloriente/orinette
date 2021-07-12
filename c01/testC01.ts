@@ -206,6 +206,38 @@ async function ex06() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX07 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex07() {
+	const folder = 'ex07';
+	const file = 'ft_rev_int_tab';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+			if (stdout) console.log('stdout:', stdout);
+			if (stderr) console.log('stderr:', stderr);
+
+			exec('./' + file + ' ',
+				(error, stdout, stderr) => {
+
+					if (error) console.log('error:', error);
+					if (stderr) console.log('stderr:', stderr);
+
+					console.log(stdout);
+
+					// Tratando condicoes
+					(stdout == '98364752') ? console.log('Array alterado de  25743689 para '+stdout+' ✅') :
+					console.log('Ordem está DIFERENTE... ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + stdout);
+			});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX01 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // async function ex01() {
 // 	const folder = 'ex01';
@@ -245,31 +277,39 @@ async function ex06() {
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
-ex06();
-// setTimeout(async () => {
-// 	space();
-// 	ex00();
-// 	setTimeout(async () => {
-// 		space();
-// 		ex01();
-// 		setTimeout(async () => {
-// 			space();
-// 			ex02();
-// 			setTimeout(async () => {
-// 				space();
-// 				ex03();
-// 				setTimeout(async () => {
-// 					space();
-// 					ex04();
-// 					setTimeout(async () => {
-// 						space();
-// 						ex05();
-// 					}, 800);
-// 				}, 800);
-// 			}, 800);
-// 		}, 800);
-// 	}, 800);
-// }, 800);
+
+setTimeout(async () => {
+	space();
+	ex00();
+	setTimeout(async () => {
+		space();
+		ex01();
+		setTimeout(async () => {
+			space();
+			ex02();
+			setTimeout(async () => {
+				space();
+				ex03();
+				setTimeout(async () => {
+					space();
+					ex04();
+					setTimeout(async () => {
+						space();
+						ex05();
+						setTimeout(async () => {
+							space();
+							ex06();
+							setTimeout(async () => {
+								space();
+								ex07();
+							}, 300);
+						}, 300);
+					}, 300);
+				}, 300);
+			}, 300);
+		}, 300);
+	}, 300);
+}, 300);
 
 
 
