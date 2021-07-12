@@ -8,6 +8,6 @@ const data = {
     paramsEx05: ['Boa_noite', "Bom_dia", "Hi", "A_42"],
     paramsEx06: ['Boa_noite', "Bom_dia", "Hi", "A_42"],
     paramsEx07: [], // Blocked
-    paramsEx08: [1, 2, 4, 6, 8, 9]
+    paramsEx08: [], // Blocked
 };
 module.exports = { data };

@@ -238,41 +238,37 @@ async function ex07() {
 	};
 };
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX01 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-// async function ex01() {
-// 	const folder = 'ex01';
-// 	const file = 'ft_print_alphabet';
-// 	console.log('Testando ' + folder + '... 🕒');
-// 	try {
-// 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
-// 			data.nameUser
-// 			+ '/' + folder + '/' + file + '.c');
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX08 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex08() {
+	const folder = 'ex08';
+	const file = 'ft_sort_int_tab';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
 
-// 		if (stdout) console.log('stdout:', stdout);
-// 		if (stderr) console.log('stderr:', stderr);
+			if (stdout) console.log('stdout:', stdout);
+			if (stderr) console.log('stderr:', stderr);
 
-// 		exec('./' + file + ' ',
-// 			(error, stdout, stderr) => {
+			exec('./' + file + ' ',
+				(error, stdout, stderr) => {
 
+					if (error) console.log('error:', error);
+					if (stderr) console.log('stderr:', stderr);
 
-// 				console.log("Tamanho do alfabeto: " + stdout.length);
-// 				console.log('Começa com: ' + stdout[0]);
-// 				console.log('Acaba com: ' + (stdout[stdout.length - 1]));
+					console.log(stdout);
 
-// 				// Tratando condicoes
-// 				(stdout.length == 26 &&
-// 					stdout[0] == 'a' &&
-// 					stdout[stdout.length - 1] == 'z') ?
-// 					console.log('C00 - ' + folder + ' - OK! ✅') : console.log('' + folder + ' - ERROR (Não contém AS REGRAS) ❗️');
-// 				console.log("#Stdout: '" + stdout + "'");
-// 				if (error || stderr) console.log('Encontrado erros: ' + stderr + ' ❌');
-// 			});
-
-// 	} catch (err) {
-// 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-// 		console.error(err);
-// 	};
-// };
+					// Tratando condicoes
+					(stdout == '24578936') ? console.log('Array alterado de  24578936 para '+stdout+' ✅') :
+					console.log('Ordem está DIFERENTE... ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + stdout);
+			});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
 
 
 console.log('INICIANDO ORINETE...');
@@ -302,14 +298,18 @@ setTimeout(async () => {
 							setTimeout(async () => {
 								space();
 								ex07();
-							}, 300);
-						}, 300);
-					}, 300);
-				}, 300);
-			}, 300);
-		}, 300);
-	}, 300);
-}, 300);
+								setTimeout(async () => {
+									space();
+									ex08();
+								}, 700);
+							}, 700);
+						}, 700);
+					}, 700);
+				}, 700);
+			}, 700);
+		}, 700);
+	}, 700);
+}, 700);
 
 
 
