@@ -293,10 +293,41 @@ async function ex09() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX10 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex10() {
+	const folder = 'ex10';
+	const file = 'ft_strlcpy';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		await data.paramsEx10.forEach(param => {
+			exec('./' + file + ' ' + param.dest+' '+param.src+' '+param.int,
+				(error, stdout, stderr) => {
+
+					let res = param.src.length;
+
+					// Tratando condicoes
+					(stdout == res) ? console.log('"'+param.src + '" definido como "' + stdout + '" ✅') : console.log('"'+param.src + '" É DIFERENTE DE "'+stdout+'" ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param.src, error);
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
-ex09();
+
+ex10();
+
 // setTimeout(async () => {
 // 	space();
 // 	ex00();
@@ -321,14 +352,22 @@ ex09();
 // 							setTimeout(async () => {
 // 								space();
 // 								ex07();
-// 							}, 700);
-// 						}, 700);
-// 					}, 700);
-// 				}, 700);
-// 			}, 700);
-// 		}, 700);
-// 	}, 700);
-// }, 700);
+// 								setTimeout(async () => {
+// 									space();
+// 									ex08();
+// 									setTimeout(async () => {
+// 										space();
+// 										ex09();
+// 									}, 250);
+// 								}, 250);
+// 							}, 250);
+// 						}, 250);
+// 					}, 250);
+// 				}, 250);
+// 			}, 250);
+// 		}, 250);
+// 	}, 250);
+// }, 250);
 
 
 async function space() {

@@ -1,5 +1,5 @@
 const data = {
-    nameUser: 'jdias-mo',//  jdias-mo gfreitas
+    nameUser: 'gfreitas',//  jdias-mo gfreitas
     paramsEx00: [{dest: 'ola', src: 'mundo'},{dest: 'raposa', src: 'mbunda'},{dest: '42Lis', src: '42'}],
     paramsEx01: [{dest: 'ola', src: 'mundo', int: 3},
     {dest: 'ola', src: 'mundo', int: 3},
@@ -68,5 +68,10 @@ const data = {
         'E voce? como vai seu DIA..',
         "Teste que testa Bem TesT_ADo serA",
         'heLLo'],
+        paramsEx10: [
+        {dest: 'alo', src: 'mundo', int: 3},
+        {dest: 'ola', src: 'alo', int: 3},
+        {dest: 'amigo', src: 'friend', int: 5},
+        {dest: 'programa', src: 'toi', int: 8}],
 };
 module.exports = { data };
