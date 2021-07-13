@@ -196,15 +196,43 @@ async function ex06() {
 				(error, stdout, stderr) => {
 
 					let bool = /[\x00-\x08\x0E-\x1F\x80-\xFF]/.test(param);
-					// console.log(stdout);
-					// console.log(param);
-					// console.log(bool);
 					// Tratando condicoes
 					(stdout == !bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO '+stdout+'... ❌');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
 				});
 		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX05 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex07() {
+	const folder = 'ex07';
+	const file = 'ft_strupcase';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		await data.paramsEx07.forEach(param => {
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
+
+					let res = param.toUpperCase();
+					// console.log(stdout);
+					// console.log(param);
+					// console.log(res);
+
+					// Tratando condicoes
+					(stdout == res) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' Diferente de '+stdout+' ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
+				});
+		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
 		console.error(err);
@@ -215,27 +243,39 @@ async function ex06() {
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
-ex06();
-// setTimeout(async () => {
-// 	space();
-// 	ex00();
-// 	setTimeout(async () => {
-// 		space();
-// 		ex01();
-// 		setTimeout(async () => {
-// 			space();
-// 			ex02();
-// 			setTimeout(async () => {
-// 				space();
-// 				ex03();
-// 				setTimeout(async () => {
-// 					space();
-// 					ex04();
-// 				}, 700);
-// 			}, 700);
-// 		}, 700);
-// 	}, 700);
-// }, 700);
+
+setTimeout(async () => {
+	space();
+	ex00();
+	setTimeout(async () => {
+		space();
+		ex01();
+		setTimeout(async () => {
+			space();
+			ex02();
+			setTimeout(async () => {
+				space();
+				ex03();
+				setTimeout(async () => {
+					space();
+					ex04();
+					setTimeout(async () => {
+						space();
+						ex05();
+						setTimeout(async () => {
+							space();
+							ex06();
+							setTimeout(async () => {
+								space();
+								ex07();
+							}, 700);
+						}, 700);
+					}, 700);
+				}, 700);
+			}, 700);
+		}, 700);
+	}, 700);
+}, 700);
 
 
 async function space() {

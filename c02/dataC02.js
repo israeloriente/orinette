@@ -47,7 +47,13 @@ const data = {
         'AAIJID^ ',
         // "\n",
         'AAIJIDa'],
-    paramsEx07: [], // Blocked
-    paramsEx08: [], // Blocked
+        paramsEx07: [
+        "abcdca",
+        'ABCFST:',
+        "abvcAA",
+        'ABHF[',
+        'ABHF}',
+        'AAIAbb',
+        'AIDa2'],
 };
 module.exports = { data };
