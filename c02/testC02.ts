@@ -31,7 +31,7 @@ async function ex00() {
 	};
 };
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX00 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX01 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 async function ex01() {
 	const folder = 'ex01';
 	const file = 'ft_strncpy';
@@ -60,12 +60,43 @@ async function ex01() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX02 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex02() {
+	const folder = 'ex02';
+	const file = 'ft_str_is_alpha';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+
+		await data.paramsEx02.forEach(param => {
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
+
+					const bool = /^[a-zA-Z()]+$/.test(param);
+
+					// Tratando condicoes
+					(stdout == bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO '+stdout+'... ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param);
+			});
+		});
+
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
 
 
-ex01();
+ex02();
 
 
 async function space() {
