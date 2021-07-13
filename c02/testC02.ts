@@ -179,7 +179,7 @@ async function ex05() {
 	};
 };
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX05 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX06 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 async function ex06() {
 	const folder = 'ex06';
 	const file = 'ft_str_is_printable';
@@ -207,7 +207,7 @@ async function ex06() {
 	};
 };
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX05 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX07 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 async function ex07() {
 	const folder = 'ex07';
 	const file = 'ft_strupcase';
@@ -224,10 +224,35 @@ async function ex07() {
 				(error, stdout, stderr) => {
 
 					let res = param.toUpperCase();
-					// console.log(stdout);
-					// console.log(param);
-					// console.log(res);
 
+					// Tratando condicoes
+					(stdout == res) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' Diferente de '+stdout+' ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX08 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex08() {
+	const folder = 'ex08';
+	const file = 'ft_strlowcase';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		await data.paramsEx08.forEach(param => {
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
+
+					let res = param.toLowerCase();
 					// Tratando condicoes
 					(stdout == res) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' Diferente de '+stdout+' ❌');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
@@ -241,41 +266,43 @@ async function ex07() {
 
 
 
+
+
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
-
-setTimeout(async () => {
-	space();
-	ex00();
-	setTimeout(async () => {
-		space();
-		ex01();
-		setTimeout(async () => {
-			space();
-			ex02();
-			setTimeout(async () => {
-				space();
-				ex03();
-				setTimeout(async () => {
-					space();
-					ex04();
-					setTimeout(async () => {
-						space();
-						ex05();
-						setTimeout(async () => {
-							space();
-							ex06();
-							setTimeout(async () => {
-								space();
-								ex07();
-							}, 700);
-						}, 700);
-					}, 700);
-				}, 700);
-			}, 700);
-		}, 700);
-	}, 700);
-}, 700);
+ex08();
+// setTimeout(async () => {
+// 	space();
+// 	ex00();
+// 	setTimeout(async () => {
+// 		space();
+// 		ex01();
+// 		setTimeout(async () => {
+// 			space();
+// 			ex02();
+// 			setTimeout(async () => {
+// 				space();
+// 				ex03();
+// 				setTimeout(async () => {
+// 					space();
+// 					ex04();
+// 					setTimeout(async () => {
+// 						space();
+// 						ex05();
+// 						setTimeout(async () => {
+// 							space();
+// 							ex06();
+// 							setTimeout(async () => {
+// 								space();
+// 								ex07();
+// 							}, 700);
+// 						}, 700);
+// 					}, 700);
+// 				}, 700);
+// 			}, 700);
+// 		}, 700);
+// 	}, 700);
+// }, 700);
 
 
 async function space() {

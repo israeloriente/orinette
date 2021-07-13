@@ -55,5 +55,13 @@ const data = {
         'ABHF}',
         'AAIAbb',
         'AIDa2'],
+        paramsEx08: [
+        "abcdca",
+        'ABCFST:',
+        "abvcAA",
+        'ABHF[',
+        'AbHF}',
+        'AAIAbb',
+        'AIDa2'],
 };
 module.exports = { data };
