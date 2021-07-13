@@ -17,7 +17,7 @@ async function ex00() {
 		if (stderr) console.log('stderr:', stderr);
 
 		await data.paramsEx00.forEach(param => {
-			exec('./' + file + ' ' + param.dest +' '+param.src,
+			exec('./' + file + ' ' + param.dest + ' ' + param.src,
 				(error, stdout, stderr) => {
 					// Tratando condicoes
 					(stdout == param.src) ? console.log(param.dest + ' foi alterado para ' + stdout + ' ✅') : console.log(param.src + ' ❌ RETORNOU DIFERENTE...');
@@ -45,11 +45,11 @@ async function ex01() {
 		if (stderr) console.log('stderr:', stderr);
 
 		await data.paramsEx01.forEach(param => {
-			exec('./' + file + ' ' + param.dest +' '+param.src + ' '+ param.int,
+			exec('./' + file + ' ' + param.dest + ' ' + param.src + ' ' + param.int,
 				(error, stdout, stderr) => {
-				let response = param.src.slice(0, param.int);
+					let response = param.src.slice(0, param.int);
 					// Tratando condicoes
-					(stdout == response) ? console.log(param.dest + ' foi alterado para ' + stdout + ' ✅') : console.log(param.src + ' ❌ RETORNOU DIFERENTE... '+stdout+'');
+					(stdout == response) ? console.log(param.dest + ' foi alterado para ' + stdout + ' ✅') : console.log(param.src + ' ❌ RETORNOU DIFERENTE... ' + stdout + '');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param.src);
 				});
 		});
@@ -80,9 +80,9 @@ async function ex02() {
 					const bool = /^[a-zA-Z()]+$/.test(param);
 
 					// Tratando condicoes
-					(stdout == bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO '+stdout+'... ❌');
+					(stdout == bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO ' + stdout + '... ❌');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param);
-			});
+				});
 		});
 
 	} catch (err) {
@@ -110,9 +110,9 @@ async function ex03() {
 
 					const bool = /^\d+$/.test(param);
 					// Tratando condicoes
-					(stdout == bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO '+stdout+'... ❌');
+					(stdout == bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO ' + stdout + '... ❌');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
-			});
+				});
 		});
 
 	} catch (err) {
@@ -139,9 +139,38 @@ async function ex04() {
 
 					const bool = /^[a-z()]+$/.test(param);
 					// Tratando condicoes
+					(stdout == bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO ' + stdout + '... ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
+				});
+		});
+
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX05 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex05() {
+	const folder = 'ex05';
+	const file = 'ft_str_is_uppercase';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		await data.paramsEx05.forEach(param => {
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
+
+					const bool = /^[A-Z()]+$/.test(param);
+					// Tratando condicoes
 					(stdout == bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO '+stdout+'... ❌');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
-			});
+				});
 		});
 
 	} catch (err) {
@@ -154,27 +183,27 @@ async function ex04() {
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
-
-setTimeout(async () => {
-	space();
-	ex00();
-	setTimeout(async () => {
-		space();
-		ex01();
-		setTimeout(async () => {
-			space();
-			ex02();
-			setTimeout(async () => {
-				space();
-				ex03();
-				setTimeout(async () => {
-					space();
-					ex04();
-				}, 700);
-			}, 700);
-		}, 700);
-	}, 700);
-}, 700);
+ex05();
+// setTimeout(async () => {
+// 	space();
+// 	ex00();
+// 	setTimeout(async () => {
+// 		space();
+// 		ex01();
+// 		setTimeout(async () => {
+// 			space();
+// 			ex02();
+// 			setTimeout(async () => {
+// 				space();
+// 				ex03();
+// 				setTimeout(async () => {
+// 					space();
+// 					ex04();
+// 				}, 700);
+// 			}, 700);
+// 		}, 700);
+// 	}, 700);
+// }, 700);
 
 
 async function space() {

@@ -28,7 +28,16 @@ const data = {
         'gtgtG',
         'gt*',
         'pijh^'],
-    paramsEx05: ['Boa_noite', "Bom_dia", "Hi", "A_42"],
+        paramsEx05: [
+        'AAA@',
+        'ABHFBBETZ:',
+        'ABHFBBETZ',
+        'ABHF[',
+        'ABHF}',
+        'AF\}',
+        'AAIJID^',
+        'AAIJIDa',
+    ],
     paramsEx06: ['Boa_noite', "Bom_dia", "Hi", "A_42"],
     paramsEx07: [], // Blocked
     paramsEx08: [], // Blocked
