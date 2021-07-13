@@ -12,7 +12,7 @@
     Joining norminette and molinette in a single command!
     <br />
     <br />
-    <a href="Demo">View Demo</a>
+    <a href="#Demo">View Demo</a>
     ·
     <a href="https://github.com/israeloriente/orinette/issues/new">Report Bug</a>
     ·
