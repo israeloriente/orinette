@@ -27,7 +27,11 @@ async function ex00() {
 
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -56,7 +60,11 @@ async function ex01() {
 
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -87,7 +95,11 @@ async function ex02() {
 
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -117,7 +129,11 @@ async function ex03() {
 
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -146,7 +162,11 @@ async function ex04() {
 
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -175,7 +195,11 @@ async function ex05() {
 
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -184,7 +208,6 @@ async function ex06() {
 	const folder = 'ex06';
 	const file = 'ft_str_is_printable';
 	console.log('Testando ' + folder + '... 🕒\n');
-	console.log('🚨 Not So Perfect maybe cause error 🚨 \n');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -204,7 +227,11 @@ async function ex06() {
 		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -233,7 +260,11 @@ async function ex07() {
 		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -261,7 +292,11 @@ async function ex08() {
 		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -290,7 +325,11 @@ async function ex09() {
 		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
@@ -319,7 +358,11 @@ async function ex10() {
 		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 

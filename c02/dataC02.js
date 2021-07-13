@@ -1,5 +1,5 @@
 const data = {
-    nameUser: 'jdias-mo',//  jdias-mo gfreitas
+    nameUser: 'inunes-o',//  jdias-mo gfreitas
     paramsEx00: [{dest: 'ola', src: 'mundo'},{dest: 'raposa', src: 'mbunda'},{dest: '42Lis', src: '42'}],
     paramsEx01: [{dest: 'ola', src: 'mundo', int: 3},
     {dest: 'ola', src: 'mundo', int: 3},
@@ -38,7 +38,7 @@ const data = {
         'AAIJID^',
         'AAIJIDa'],
         paramsEx06: [
-        "'\n'",
+        // "'\n'",
         'ABHFBBETZ:',
         "ABHFBBETZ",
         'ABHF[',
