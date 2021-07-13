@@ -184,6 +184,7 @@ async function ex06() {
 	const folder = 'ex06';
 	const file = 'ft_str_is_printable';
 	console.log('Testando ' + folder + '... 🕒');
+	console.log('🚨 Not So Perfect maybe cause error 🚨');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -312,7 +313,7 @@ async function ex10() {
 					let res = param.src.length;
 
 					// Tratando condicoes
-					(stdout == res) ? console.log('"'+param.src + '" definido como "' + stdout + '" ✅') : console.log('"'+param.src + '" É DIFERENTE DE "'+stdout+'" ❌');
+					(stdout == res) ? console.log('"'+param.src + '" definido como "' + stdout + '" ✅ 🎊 🎉') : console.log('"'+param.src + '" É DIFERENTE DE "'+stdout+'" ❌');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param.src, error);
 				});
 		});
@@ -328,46 +329,46 @@ console.log('Desenvolvedor: ' + data.nameUser);
 
 ex10();
 
-// setTimeout(async () => {
-// 	space();
-// 	ex00();
-// 	setTimeout(async () => {
-// 		space();
-// 		ex01();
-// 		setTimeout(async () => {
-// 			space();
-// 			ex02();
-// 			setTimeout(async () => {
-// 				space();
-// 				ex03();
-// 				setTimeout(async () => {
-// 					space();
-// 					ex04();
-// 					setTimeout(async () => {
-// 						space();
-// 						ex05();
-// 						setTimeout(async () => {
-// 							space();
-// 							ex06();
-// 							setTimeout(async () => {
-// 								space();
-// 								ex07();
-// 								setTimeout(async () => {
-// 									space();
-// 									ex08();
-// 									setTimeout(async () => {
-// 										space();
-// 										ex09();
-// 									}, 250);
-// 								}, 250);
-// 							}, 250);
-// 						}, 250);
-// 					}, 250);
-// 				}, 250);
-// 			}, 250);
-// 		}, 250);
-// 	}, 250);
-// }, 250);
+setTimeout(async () => {
+	space();
+	ex00();
+	setTimeout(async () => {
+		space();
+		ex01();
+		setTimeout(async () => {
+			space();
+			ex02();
+			setTimeout(async () => {
+				space();
+				ex03();
+				setTimeout(async () => {
+					space();
+					ex04();
+					setTimeout(async () => {
+						space();
+						ex05();
+						setTimeout(async () => {
+							space();
+							ex06();
+							setTimeout(async () => {
+								space();
+								ex07();
+								setTimeout(async () => {
+									space();
+									ex08();
+									setTimeout(async () => {
+										space();
+										ex09();
+									}, 250);
+								}, 250);
+							}, 250);
+						}, 250);
+					}, 250);
+				}, 250);
+			}, 250);
+		}, 250);
+	}, 250);
+}, 250);
 
 
 async function space() {
