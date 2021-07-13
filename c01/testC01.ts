@@ -2,7 +2,6 @@ const { data } = require('./dataC01.js')
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const project = 'C01';
-const fs = require('fs')
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX00 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 async function ex00() {

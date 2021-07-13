@@ -1,6 +1,6 @@
 const data = {
-    nameUser: 'gfreitas',
-    paramsEx00: [3, 90, 0, 1, -1],
+    nameUser: 'jdias-mo',
+    paramsEx00: [{dest: 'ola', src: 'mundo'},{dest: 'raposa', src: 'mbunda'},{dest: '42Lis', src: '42'}],
     paramsEx01: [3],
     paramsEx02: {a: 8, b: 6},
     paramsEx03: {a: 12, b: 42},

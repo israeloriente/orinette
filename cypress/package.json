@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^7.5.0",
+    "@briebug/cypress-schematic": "^5.0.0"
+  }
+}
