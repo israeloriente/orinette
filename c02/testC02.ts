@@ -264,13 +264,39 @@ async function ex08() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX09 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex09() {
+	const folder = 'ex09';
+	const file = 'ft_strcapitalize';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
 
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		await data.paramsEx09.forEach(param => {
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
 
+					let res = ex09ExtencionUppercase(param);
+
+					// Tratando condicoes
+					(stdout == res) ? console.log('"'+param + '" definido como "' + stdout + '" ✅') : console.log('"'+param + '" É DIFERENTE DE "'+stdout+'" ❌');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
 
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
-ex08();
+ex09();
 // setTimeout(async () => {
 // 	space();
 // 	ex00();
@@ -310,3 +336,14 @@ async function space() {
 	console.log('-----------------------------------------------');
 	console.log("\n");
 }
+
+function ex09ExtencionUppercase(str) {
+	var splitStr = str.toLowerCase().split(' ');
+	for (var i = 0; i < splitStr.length; i++) {
+		// You do not need to check if i is larger than splitStr length, as your for does that for you
+		// Assign it back to the array
+		splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+	}
+	// Directly return the joined string
+	return splitStr.join(' ');
+ }

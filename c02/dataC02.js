@@ -63,5 +63,10 @@ const data = {
         'AbHF}',
         'AAIAbb',
         'AIDa2'],
+        paramsEx09: [
+        "Ola mundo, o mundo esta ola",
+        'E voce? como vai seu DIA..',
+        "Teste que testa Bem TesT_ADo serA",
+        'heLLo'],
 };
 module.exports = { data };
