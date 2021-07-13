@@ -73,5 +73,14 @@ const data = {
         {dest: 'ola', src: 'alo', int: 3},
         {dest: 'amigo', src: 'friend', int: 5},
         {dest: 'programa', src: 'toi', int: 8}],
+        paramsEx11: [
+            "\n",
+            'ABHFB\nBETZ: \n',
+            "ABHFBBETZ",
+            'nada',
+            'ABHF} \0',
+            'AF\}',
+            'AAIJID^/n'
+        ],
 };
 module.exports = { data };
