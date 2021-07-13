@@ -377,6 +377,10 @@ setTimeout(async () => {
 								setTimeout(async () => {
 									space();
 									ex08();
+									setTimeout(async () => {
+										space();
+										checkNorminete();
+									}, 800);
 								}, 800);
 							}, 800);
 						}, 800);
@@ -396,4 +400,22 @@ async function space() {
 	console.log("\n");
 	console.log('-----------------------------------------------');
 	console.log("\n");
+}
+
+async function checkNorminete() {
+	space();
+	console.log("Checking Norminete");
+	try {
+		const { stdout, stderr } = await exec('norminette -R CheckForbiddenSourceHeader '+data.nameUser);
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
+	};
+	space();
 }
