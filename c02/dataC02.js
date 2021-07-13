@@ -17,7 +17,17 @@ const data = {
         'gtgtG',
         'gt*',
         'pijh^'],
-    paramsEx04: {a: 80, b: 42},
+    paramsEx04: [
+        '129090039',
+        'hiueuyqaazznjkg:',
+        'hiueuyqaazznjkg',
+        "hjjazhA",
+        983457394,
+        'AS[BVG234',
+        '$%^$',
+        'gtgtG',
+        'gt*',
+        'pijh^'],
     paramsEx05: ['Boa_noite', "Bom_dia", "Hi", "A_42"],
     paramsEx06: ['Boa_noite', "Bom_dia", "Hi", "A_42"],
     paramsEx07: [], // Blocked
