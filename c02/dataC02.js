@@ -36,9 +36,17 @@ const data = {
         'ABHF}',
         'AF\}',
         'AAIJID^',
-        'AAIJIDa',
-    ],
-    paramsEx06: ['Boa_noite', "Bom_dia", "Hi", "A_42"],
+        'AAIJIDa'],
+        paramsEx06: [
+        "'\n'",
+        'ABHFBBETZ:',
+        "ABHFBBETZ",
+        'ABHF[',
+        'ABHF}',
+        'AF\}',
+        'AAIJID^ ',
+        // "\n",
+        'AAIJIDa'],
     paramsEx07: [], // Blocked
     paramsEx08: [], // Blocked
 };
