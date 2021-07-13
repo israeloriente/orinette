@@ -31,12 +31,41 @@ async function ex00() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX00 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex01() {
+	const folder = 'ex01';
+	const file = 'ft_strncpy';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+
+		await data.paramsEx01.forEach(param => {
+			exec('./' + file + ' ' + param.dest +' '+param.src + ' '+ param.int,
+				(error, stdout, stderr) => {
+				let response = param.src.slice(0, param.int);
+					// Tratando condicoes
+					(stdout == response) ? console.log(param.dest + ' foi alterado para ' + stdout + ' ✅') : console.log(param.src + ' ❌ RETORNOU DIFERENTE... '+stdout+'');
+					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param.src);
+				});
+		});
+
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+	};
+};
+
 
 console.log('INICIANDO ORINETE...');
 console.log('Desenvolvedor: ' + data.nameUser);
 
 
-ex00();
+ex01();
 
 
 async function space() {

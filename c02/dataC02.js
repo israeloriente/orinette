@@ -1,7 +1,10 @@
 const data = {
     nameUser: 'jdias-mo',
     paramsEx00: [{dest: 'ola', src: 'mundo'},{dest: 'raposa', src: 'mbunda'},{dest: '42Lis', src: '42'}],
-    paramsEx01: [3],
+    paramsEx01: [{dest: 'ola', src: 'mundo', int: 3},
+    {dest: 'ola', src: 'mundo', int: 3},
+    {dest: 'amigo', src: 'friend', int: 8},
+    {dest: 'programa', src: 'toi', int: 8}],
     paramsEx02: {a: 8, b: 6},
     paramsEx03: {a: 12, b: 42},
     paramsEx04: {a: 80, b: 42},
