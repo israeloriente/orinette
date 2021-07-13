@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
 	
 	char *string = argv[1];
 
-	// ft_putstr_non_printable(string);
+	ft_putstr_non_printable(string);
 
-	// printf("%s", string);
+	printf("%s", string);
 }

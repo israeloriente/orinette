@@ -183,8 +183,8 @@ async function ex05() {
 async function ex06() {
 	const folder = 'ex06';
 	const file = 'ft_str_is_printable';
-	console.log('Testando ' + folder + '... 🕒');
-	console.log('🚨 Not So Perfect maybe cause error 🚨');
+	console.log('Testando ' + folder + '... 🕒\n');
+	console.log('🚨 Not So Perfect maybe cause error 🚨 \n');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -329,7 +329,7 @@ async function ex11() {
 	const file = 'ft_putstr_non_printable';
 	console.log('Testando ' + folder + '... 🕒');
 	console.log('🚨 Not So Perfect maybe cause error 🚨 \n');
-	console.log('❗️ Check yourself ❗️');
+	console.log('❗️ Check yourself ❗️\n');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
 			data.nameUser
@@ -351,55 +351,106 @@ async function ex11() {
 		});
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		console.error(err);
-		console.error("Eror code: "+err.code);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
+	};
+};
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX12 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex12() {
+	const folder = 'ex12';
+	const file = 'ft_print_memory';
+	console.log('Testando ' + folder + '... 🕒');
+	console.log('🚨 Not So Perfect maybe cause error 🚨 \n');
+	console.log('❗️ Check yourself ❗️\n');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		await data.paramsEx12.forEach(param => {
+			exec('./' + file + ' ' + param.addr+' '+param.size,
+				(error, stdout, stderr) => {
+	
+					console.log('Entrada: '+param.addr+' -> '+param.size);
+					console.log('Saida: '+stdout);
+					console.log('-----------------');
+					// Tratando condicoes
+					// (stdout == !bool) ? console.log(param + ' definido como ' + stdout + ' ✅') : console.log(param + ' DEFINIDO COMO '+stdout+'... ❌');
+					// if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
 	};
 };
 
 
-console.log('INICIANDO ORINETE...');
-console.log('Desenvolvedor: ' + data.nameUser);
-ex11();
-// setTimeout(async () => {
-// 	space();
-// 	ex00();
-// 	setTimeout(async () => {
-// 		space();
-// 		ex01();
-// 		setTimeout(async () => {
-// 			space();
-// 			ex02();
-// 			setTimeout(async () => {
-// 				space();
-// 				ex03();
-// 				setTimeout(async () => {
-// 					space();
-// 					ex04();
-// 					setTimeout(async () => {
-// 						space();
-// 						ex05();
-// 						setTimeout(async () => {
-// 							space();
-// 							ex06();
-// 							setTimeout(async () => {
-// 								space();
-// 								ex07();
-// 								setTimeout(async () => {
-// 									space();
-// 									ex08();
-// 									setTimeout(async () => {
-// 										space();
-// 										ex09();
-// 									}, 250);
-// 								}, 250);
-// 							}, 250);
-// 						}, 250);
-// 					}, 250);
-// 				}, 250);
-// 			}, 250);
-// 		}, 250);
-// 	}, 250);
-// }, 250);
+console.log('INICIANDO ORINETE...\n');
+console.log('Desenvolvedor: ' + data.nameUser+'\n');
+
+setTimeout(async () => {
+	space();
+	ex00();
+	setTimeout(async () => {
+		space();
+		ex01();
+		setTimeout(async () => {
+			space();
+			ex02();
+			setTimeout(async () => {
+				space();
+				ex03();
+				setTimeout(async () => {
+					space();
+					ex04();
+					setTimeout(async () => {
+						space();
+						ex05();
+						setTimeout(async () => {
+							space();
+							ex06();
+							setTimeout(async () => {
+								space();
+								ex07();
+								setTimeout(async () => {
+									space();
+									ex08();
+									setTimeout(async () => {
+										space();
+										ex09();
+										setTimeout(async () => {
+											space();
+											ex10();
+											setTimeout(async () => {
+												space();
+												ex11();
+												setTimeout(async () => {
+													space();
+													ex12();
+												}, 450);
+											}, 450);
+										}, 450);
+									}, 450);
+								}, 450);
+							}, 450);
+						}, 450);
+					}, 450);
+				}, 450);
+			}, 450);
+		}, 450);
+	}, 450);
+}, 450);
 
 
 async function space() {

@@ -1,5 +1,5 @@
 const data = {
-    nameUser: 'gfreitas',//  jdias-mo gfreitas
+    nameUser: 'jdias-mo',//  jdias-mo gfreitas
     paramsEx00: [{dest: 'ola', src: 'mundo'},{dest: 'raposa', src: 'mbunda'},{dest: '42Lis', src: '42'}],
     paramsEx01: [{dest: 'ola', src: 'mundo', int: 3},
     {dest: 'ola', src: 'mundo', int: 3},
@@ -82,5 +82,6 @@ const data = {
             'AF\}',
             'AAIJID^/n'
         ],
+        paramsEx12: [{addr: 'ola', size: 'mundo'},{addr: 'ola', size: 'mundo'},{addr: 'ola', size: 'mundo'}],
 };
 module.exports = { data };
