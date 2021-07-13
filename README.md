@@ -1,23 +1,22 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://www.42lisboa.com/wp-content/uploads/2020/07/42-Lisboa_RGB_Vertical.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  
+<img width="265" alt="Screen Shot 2021-07-13 at 5 17 56 PM" src="https://user-images.githubusercontent.com/31784632/125488427-c24965bc-7d7b-46ac-92a4-c69bea30a625.png">
+
+
 
   <h3 align="center">Orinette Picine 2021/06</h3>
 
   <p align="center">
     Joining norminette and molinette in a single command!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="Demo">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/israeloriente/orinette/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/israeloriente/orinette/issues/new">Request Feature</a>
   </p>
 </p>
 
@@ -41,11 +40,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -54,13 +50,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 I decided to create this automated evaluation example to make the work more proactive. This script does not know what the "Molinette" standards are and can get some exercises wrong. Most of the exercises will only correct simple spelling errors and convert output data...
 
 YOU SHOULD BE WISE, DON'T GET COMPLACENT WITH THIS TOOL BUT EXPLORE THE DOUBTS OF YOUR COLLEAGUE AND LEARN IN THIS TIME THAT HAS BEEN GAINED.
 
-### Built With NodeJS
+
+### Built With
 
 I am not an expert on the subject, in fact I created this in a few days watching youtube videos and basic javascript "hello world" tutorials, I tried to apply the concepts learned in shell00 and pass the data a validation in a higher level language.
 Below are some things I needed to read to make the thing work:
@@ -141,15 +136,17 @@ The only file you need to modify is "dataCXX.js".
  ```sh
  node testC01.ts
  ```
-
+## Demo
 https://user-images.githubusercontent.com/31784632/125485709-34977909-a9a9-4936-b3d6-12e4c6e41030.mp4
 
+
+***Trying to test an exercise that doesn't work? Try doing a "git pull", maybe your version is not up to date :)***
 
  
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Any contribution is welcome, the code is very dirty and was made by someone who never did this before, if you also think you don't know, try to follow these steps to do it together, the comments and outputs are in Portuguese :) let's honor the 42 LISBON **greatly appreciated**.
+Any contribution is welcome, the code is very dirty and was made by someone who never did this before, if you also think you don't know, try to follow these steps to do it together, the comments and outputs are in Portuguese, **let's honor the 42 LISBON :)**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
