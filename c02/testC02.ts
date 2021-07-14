@@ -508,7 +508,7 @@ async function space() {
 
 async function checkNorminete() {
 	space();
-	console.log("Checking Norminete");
+	console.log("🧠 Checking Norminete 🧠");
 	try {
 		const { stdout, stderr } = await exec('norminette -R CheckForbiddenSourceHeader '+data.nameUser);
 		if (stdout) console.log('stdout:', stdout);
