@@ -333,11 +333,7 @@ async function checkNorminete() {
 		if (stderr) console.log('stderr:', stderr);
 	} catch (err) {
 		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
-		if (err.code == 1) {
-			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
-			console.log("ARQUIVO ESTA EM FALTA... 🧐");
-			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
-		} else console.error(err);
+		console.error(err.stdout);
 	};
 	space();
 }
