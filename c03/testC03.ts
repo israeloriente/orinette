@@ -7,6 +7,7 @@ const project = 'C03';
 async function ex00() {
 	const folder = 'ex00';
 	const file = 'ft_strcmp';
+	const question = '"Reproduzir de forma idêntica o funcionamento da função strcmp (man strcmp):"';
 	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
@@ -15,8 +16,7 @@ async function ex00() {
 
 		if (stdout) console.log('stdout:', stdout);
 		if (stderr) console.log('stderr:', stderr);
-		console.log('EX00');
-		console.log('"Reproduzir de forma idêntica o funcionamento da função strcmp (man strcmp):" \n');
+		console.log(question+' \n');
 
 		await data.paramsEx00.forEach(param => {
 			exec('./' + file + ' ' + param.s1 + ' ' + param.s2,
@@ -25,7 +25,7 @@ async function ex00() {
 					console.log('Primeiro parametro: "'+param.s1+'"');
 					console.log('Segundo parametro: "'+param.s2+'"');
 					// Tratando condicoes
-					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅') : console.log(param.s1 + ' ❌ RETORNOU DIFERENTE...');
+					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(param.s1 + ' ❌ RETORNOU DIFERENTE... \n');
 					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param.s1 + ' ❌');
 				});
 		});
@@ -43,6 +43,7 @@ async function ex00() {
 async function ex01() {
 	const folder = 'ex01';
 	const file = 'ft_strncmp';
+	const question = '"Reproduzir de forma idêntica o funcionamento da função strncmp (man strncmp): "';
 	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
@@ -51,8 +52,7 @@ async function ex01() {
 
 		if (stdout) console.log('stdout:', stdout);
 		if (stderr) console.log('stderr:', stderr);
-		console.log('EX01');
-		console.log('"Reproduzir de forma idêntica o funcionamento da função strncmp (man strncmp):" \n');
+		console.log(question+' \n');
 
 		await data.paramsEx01.forEach(param => {
 			exec('./' + file + ' ' + param.s1 + ' ' + param.s2 +' '+ param.int,
@@ -61,7 +61,43 @@ async function ex01() {
 					console.log('Primeiro parametro: "'+param.s1+'"');
 					console.log('Segundo parametro: "'+param.s2+'"');
 					// Tratando condicoes
-					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅') : console.log(param.s1 + ' ❌ RETORNOU DIFERENTE...');
+					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(param.s1 + ' ❌ RETORNOU DIFERENTE... \n');
+					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param.s1 + ' ❌');
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
+	};
+};
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX02 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex02() {
+	const folder = 'ex02';
+	const file = 'ft_strcat';
+	const question = 'Reproduzir de forma idêntica o funcionamento da função strcat (man strcat):"';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		console.log(question+' \n');
+
+		await data.paramsEx02.forEach(param => {
+			exec('./' + file + ' ' + param.s1 + ' ' + param.s2,
+				(error, stdout, stderr) => {
+					const result = strcat(param.s1, param.s2);
+					console.log('Primeiro parametro: "'+param.s1+'"');
+					console.log('Segundo parametro: "'+param.s2+'"');
+					// Tratando condicoes
+					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(result + ' ❌ RETORNOU DIFERENTE... '+stdout+' \n');
 					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param.s1 + ' ❌');
 				});
 		});
@@ -78,31 +114,31 @@ async function ex01() {
 
 console.log('INICIANDO ORINETE...\n');
 console.log('Desenvolvedor: ' + data.nameUser + '\n');
-// ex02();
-setTimeout(async () => {
-	space();
-	ex00();
-	setTimeout(async () => {
-		space();
-		ex01();
-		setTimeout(async () => {
-			space();
-			// ex02();
-			// setTimeout(async () => {
-			// 	space();
-			// 	ex03();
-			// 	setTimeout(async () => {
-			// 		space();
-			// 		ex04();
-			// 		setTimeout(async () => {
-			// 			space();
-			// 			ex05();
-			// 		}, 450);
-			// 	}, 450);
-			// }, 450);
-		}, 450);
-	}, 450);
-}, 450);
+ex02();
+// setTimeout(async () => {
+// 	space();
+// 	ex00();
+// 	setTimeout(async () => {
+// 		space();
+// 		ex01();
+// 		setTimeout(async () => {
+// 			space();
+// 			// ex02();
+// 			// setTimeout(async () => {
+// 			// 	space();
+// 			// 	ex03();
+// 			// 	setTimeout(async () => {
+// 			// 		space();
+// 			// 		ex04();
+// 			// 		setTimeout(async () => {
+// 			// 			space();
+// 			// 			ex05();
+// 			// 		}, 450);
+// 			// 	}, 450);
+// 			// }, 450);
+// 		}, 450);
+// 	}, 450);
+// }, 450);
 
 
 async function space() {
@@ -148,4 +184,7 @@ function strncmp(str1, str2, int) {
 		}
 	}
 	return 0;
+}
+function strcat(str1, str2) {
+	return str1 + str2;
 }
