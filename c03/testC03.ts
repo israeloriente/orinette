@@ -79,7 +79,7 @@ async function ex01() {
 async function ex02() {
 	const folder = 'ex02';
 	const file = 'ft_strcat';
-	const question = 'Reproduzir de forma idêntica o funcionamento da função strcat (man strcat):"';
+	const question = '"Reproduzir de forma idêntica o funcionamento da função strcat (man strcat):"';
 	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
@@ -111,34 +111,77 @@ async function ex02() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX03 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex03() {
+	const folder = 'ex03';
+	const file = 'ft_strncat';
+	const question = '"Reproduzir de forma idêntica o funcionamento da função strncat (man strncat).:"';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		console.log(question+' \n');
+
+		await data.paramsEx03.forEach(param => {
+			exec('./' + file + ' ' + param.s1 + ' ' + param.s2 +' '+ param.int,
+				(error, stdout, stderr) => {
+					// console.log(param.s1);
+					// console.log(param.s2);
+					// console.log(param.int);
+					const result = strncat(param.s1, param.s2, param.int);
+					console.log('Primeiro parametro: "'+param.s1+'"');
+					console.log('Segundo parametro: "'+param.s2+'"');
+					// Tratando condicoes
+					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(result + ' ❌ RETORNOU DIFERENTE... '+stdout+' \n');
+					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param.s1 + ' ❌');
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
+	};
+};
+
 
 console.log('INICIANDO ORINETE...\n');
 console.log('Desenvolvedor: ' + data.nameUser + '\n');
-ex02();
-// setTimeout(async () => {
-// 	space();
-// 	ex00();
-// 	setTimeout(async () => {
-// 		space();
-// 		ex01();
-// 		setTimeout(async () => {
-// 			space();
-// 			// ex02();
-// 			// setTimeout(async () => {
-// 			// 	space();
-// 			// 	ex03();
-// 			// 	setTimeout(async () => {
-// 			// 		space();
-// 			// 		ex04();
-// 			// 		setTimeout(async () => {
-// 			// 			space();
-// 			// 			ex05();
-// 			// 		}, 450);
-// 			// 	}, 450);
-// 			// }, 450);
-// 		}, 450);
-// 	}, 450);
-// }, 450);
+// ex03();
+setTimeout(async () => {
+	space();
+	ex00();
+	setTimeout(async () => {
+		space();
+		ex01();
+		setTimeout(async () => {
+			space();
+			ex02();
+			setTimeout(async () => {
+				space();
+				ex03();
+				// setTimeout(async () => {
+				// 	space();
+				// 	ex04();
+				// 	setTimeout(async () => {
+				// 		space();
+				// 		ex05();
+				// 	}, 450);
+				// }, 450);
+			}, 450);
+		}, 450);
+	}, 450);
+}, 450);
+
+setTimeout(() => {
+	checkNorminete();
+}, 5000);
 
 
 async function space() {
@@ -149,7 +192,7 @@ async function space() {
 
 async function checkNorminete() {
 	space();
-	console.log("Checking Norminete");
+	console.log("🧠 Checking Norminete 🧠");
 	try {
 		const { stdout, stderr } = await exec('norminette -R CheckForbiddenSourceHeader ' + data.nameUser);
 		if (stdout) console.log('stdout:', stdout);
@@ -185,6 +228,16 @@ function strncmp(str1, str2, int) {
 	}
 	return 0;
 }
+
 function strcat(str1, str2) {
 	return str1 + str2;
+}
+function strncat(str1, str2, int) {
+	if (int >= str2.length) return str1 + str2;
+	else {
+		for (let i = 0; i < int; i++) {
+			str1 += (str2[i]);
+		}
+		return str1;
+	}
 }

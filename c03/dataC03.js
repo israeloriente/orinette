@@ -18,15 +18,12 @@ const data = {
         {s1: '42Lis', s2: '42'}
     ],
     paramsEx03: [
-        '129090039',
-        '1290909:',
-        "giojoi64;",
-        983457394,
-        'AS[BVG234',
-        'kl\ssk',
-        'gtgtG',
-        'gt*',
-        'pijh^'],
+        {s1: 's', s2: 'asfgd', int: 0},
+        {s1: 'esLo0@*', s2: 'AZcb2', int: 2},
+        {s1: 'A!-=-==', s2: '=nbuct', int: 15},
+        {s1: 'azs', s2: 'a', int: 9},
+        {s1: '34', s2: 'j890i', int: 1},
+    ],
     paramsEx04: [
         '129090039',
         'hiueuyqaazznjkg:',
