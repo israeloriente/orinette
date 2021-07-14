@@ -1,9 +1,10 @@
 const data = {
-    nameUser: 'gloyer-p',//  hvan-hov gloyer-p
+    nameUser: 'inunes-o',//  hvan-hov gloyer-p inunes-o
     paramsEx00: [
         {s1: 'buS', s2: 'amigo'},
         {s1: 'raposa', s2: 'mbunda'},
-        {s1: '42Lis', s2: '42'}
+        {s1: '42Lis', s2: '42'},
+        {s1: 'olaMundo', s2: 'aM'},
     ],
     paramsEx01: [
         {s1: 'amigo', s2: 'bhhdbA', int: 5},

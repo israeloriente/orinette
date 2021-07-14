@@ -25,7 +25,7 @@ async function ex00() {
 					console.log('Primeiro parametro: "'+param.s1+'"');
 					console.log('Segundo parametro: "'+param.s2+'"');
 					// Tratando condicoes
-					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(param.s1 + ' ❌ RETORNOU DIFERENTE... \n');
+					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(param.s1 + ' RETORNOU DIFERENTE... "'+stdout+'" ❌\n');
 					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param.s1 + ' ❌');
 				});
 		});
@@ -61,7 +61,7 @@ async function ex01() {
 					console.log('Primeiro parametro: "'+param.s1+'"');
 					console.log('Segundo parametro: "'+param.s2+'"');
 					// Tratando condicoes
-					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(param.s1 + ' ❌ RETORNOU DIFERENTE... \n');
+					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log(param.s1 + ' RETORNOU DIFERENTE... "'+stdout+'" ❌\n');
 					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param.s1 + ' ❌');
 				});
 		});
