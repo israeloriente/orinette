@@ -115,7 +115,7 @@ async function ex02() {
 async function ex03() {
 	const folder = 'ex03';
 	const file = 'ft_strncat';
-	const question = '"Reproduzir de forma idêntica o funcionamento da função strncat (man strncat).:"';
+	const question = '"Reproduzir de forma idêntica o funcionamento da função strncat (man strncat):"';
 	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
@@ -129,9 +129,6 @@ async function ex03() {
 		await data.paramsEx03.forEach(param => {
 			exec('./' + file + ' ' + param.s1 + ' ' + param.s2 +' '+ param.int,
 				(error, stdout, stderr) => {
-					// console.log(param.s1);
-					// console.log(param.s2);
-					// console.log(param.int);
 					const result = strncat(param.s1, param.s2, param.int);
 					console.log('Primeiro parametro: "'+param.s1+'"');
 					console.log('Segundo parametro: "'+param.s2+'"');
@@ -150,39 +147,74 @@ async function ex03() {
 	};
 };
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX04 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex04() {
+	const folder = 'ex04';
+	const file = 'ft_strstr';
+	const question = '"Reproduzir de forma idêntica o funcionamento da função strstr (man strstr)."';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		console.log(question+' \n');
+
+		await data.paramsEx04.forEach(param => {
+			exec('./' + file + ' ' + param.s1 + ' ' + param.s2,
+				(error, stdout, stderr) => {
+					// console.log(param.s1);
+					// console.log(param.s2);
+					// console.log(stdout);
+					const result = strstr(param.s1+',', param.s2);
+					console.log('Primeiro parametro: "'+param.s1+'"');
+					console.log('Segundo parametro: "'+param.s2+'"');
+					// Tratando condicoes
+					(stdout == result) ? console.log('"'+result + '" é igual que "' + stdout + '" ✅ \n') : console.log('"'+result + '" RETORNOU DIFERENTE... "'+stdout+'" ❌\n');
+					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param.s1 + ' ❌');
+				});
+		});
+	} catch (err) {
+		console.error(err);
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
+	};
+};
+
 
 console.log('INICIANDO ORINETE...\n');
 console.log('Desenvolvedor: ' + data.nameUser + '\n');
-// ex03();
-setTimeout(async () => {
-	space();
-	ex00();
-	setTimeout(async () => {
-		space();
-		ex01();
-		setTimeout(async () => {
-			space();
-			ex02();
-			setTimeout(async () => {
-				space();
-				ex03();
-				// setTimeout(async () => {
-				// 	space();
-				// 	ex04();
-				// 	setTimeout(async () => {
-				// 		space();
-				// 		ex05();
-				// 	}, 450);
-				// }, 450);
-			}, 450);
-		}, 450);
-	}, 450);
-}, 450);
-
-setTimeout(() => {
-	checkNorminete();
-}, 5000);
-
+ex04();
+// setTimeout(async () => {
+// 	space();
+// 	ex00();
+// 	setTimeout(async () => {
+// 		space();
+// 		ex01();
+// 		setTimeout(async () => {
+// 			space();
+// 			ex02();
+// 			setTimeout(async () => {
+// 				space();
+// 				ex03();
+// 				// setTimeout(async () => {
+// 				// 	space();
+// 				// 	ex04();
+// 				// 	setTimeout(async () => {
+// 				// 		space();
+// 				// 		ex05();
+// 				// 	}, 450);
+// 				// }, 450);
+// 			}, 450);
+// 		}, 450);
+// 	}, 450);
+// }, 450);
 
 async function space() {
 	console.log("\n");
@@ -240,4 +272,10 @@ function strncat(str1, str2, int) {
 		}
 		return str1;
 	}
+}
+function strstr(str1, to_find) {
+	let position = str1.indexOf(to_find);
+	if (position >= 0) {
+		return str1.slice(position);
+	} else return "(null)";
 }
