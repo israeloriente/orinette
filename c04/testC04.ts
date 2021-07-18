@@ -132,10 +132,10 @@ setTimeout(async () => {
 	// 				setTimeout(async () => {
 	// 					space();
 	// 					ex05();
-	// 					setTimeout(async () => {
-	// 						space();
-	// 						checkNorminete();
-	// 					}, 750);
+						setTimeout(async () => {
+							space();
+							checkNorminete();
+						}, 750);
 	// 				}, 750);
 	// 			}, 750);
 	// 		}, 750);
