@@ -22,7 +22,7 @@ async function ex00() {
 			exec('./' + file + ' ' + param,
 				(error, stdout, stderr) => {
 					const result = param.length;
-					console.log('Parametro: "'+param.s1+'"');
+					console.log('Parametro: "'+param+'"');
 					// Tratando condicoes
 					(stdout == result) ? console.log('"'+param + '" é tem o tamanho "' + stdout + '" ✅ \n') : console.log(param + ' RETORNOU DIFERENTE... "'+stdout+'" ❌\n');
 					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param + ' ❌');
@@ -39,11 +39,12 @@ async function ex00() {
 	};
 };
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX00 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX01 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 async function ex01() {
 	const folder = 'ex01';
 	const file = 'ft_putstr';
-	const question = '"Escreva uma função que contenha o número de caracteres em uma cadeia de caracteres e que retorne o número encontrado:"';
+	const question = '"Escreva uma função que mostre um a um os caracteres de uma string na tela.'+
+	'•O endereço do primeiro caractere da cadeia está contido no ponteiro passado como parâmetro na função:"';
 	console.log('Testando ' + folder + '... 🕒');
 	try {
 		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
@@ -54,13 +55,48 @@ async function ex01() {
 		if (stderr) console.log('stderr:', stderr);
 		console.log(question+' \n');
 
-		await data.paramsEx00.forEach(param => {
+		await data.paramsEx01.forEach(param => {
 			exec('./' + file + ' ' + param,
 				(error, stdout, stderr) => {
-					const result = param.length;
-					console.log('Parametro: "'+param.s1+'"');
+					console.log('Parametro: "'+param+'"');
 					// Tratando condicoes
-					(stdout == result) ? console.log('"'+param + '" é tem o tamanho "' + stdout + '" ✅ \n') : console.log(param + ' RETORNOU DIFERENTE... "'+stdout+'" ❌\n');
+					(stdout == param) ? console.log('"'+param + '" é exatamente igual a "' + stdout + '" ✅ \n') : console.log(param + ' RETORNOU DIFERENTE... "'+stdout+'" ❌\n');
+					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param + ' ❌');
+				});
+		});
+	} catch (err) {
+		console.log('❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌');
+		console.error(err);
+		if (err.code == 1) {
+			console.log("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️");
+			console.log("ARQUIVO ESTA EM FALTA... 🧐");
+			console.log("🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙 🆙");
+		} else console.error(err);
+	};
+};
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ EX02 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+async function ex02() {
+	const folder = 'ex02';
+	const file = 'ft_putnbr';
+	const question = '"Escreva uma função que mostre um número passado como parâmetro. A função'+
+	'deverá ser capaz de mostrar a totalidade dos valores possíveis em uma variável de tipo int:"';
+	console.log('Testando ' + folder + '... 🕒');
+	try {
+		const { stdout, stderr } = await exec('gcc -o ' + file + ' main_' + file + '.c ' +
+			data.nameUser
+			+ '/' + folder + '/' + file + '.c');
+
+		if (stdout) console.log('stdout:', stdout);
+		if (stderr) console.log('stderr:', stderr);
+		console.log(question+' \n');
+
+		await data.paramsEx02.forEach(param => {
+			exec('./' + file + ' ' + param,
+				(error, stdout, stderr) => {
+					console.log('Parametro: "'+param+'"');
+					// Tratando condicoes
+					(stdout == param) ? console.log('"'+param + '" é exatamente igual a "' + stdout + '" ✅ \n') : console.log(param + ' RETORNOU DIFERENTE... "'+stdout+'" ❌\n');
 					if (error || stderr) console.log('Encontrado erros com o parametro: ' + param + ' ❌');
 				});
 		});
@@ -81,12 +117,12 @@ console.log('Desenvolvedor: ' + data.nameUser + '\n');
 setTimeout(async () => {
 	space();
 	ex00();
-	// setTimeout(async () => {
-	// 	space();
-	// 	ex01();
-	// 	setTimeout(async () => {
-	// 		space();
-	// 		ex02();
+	setTimeout(async () => {
+		space();
+		ex01();
+		setTimeout(async () => {
+			space();
+			ex02();
 	// 		setTimeout(async () => {
 	// 			space();
 	// 			ex03();
@@ -103,8 +139,8 @@ setTimeout(async () => {
 	// 				}, 750);
 	// 			}, 750);
 	// 		}, 750);
-	// 	}, 750);
-	// }, 750);
+		}, 750);
+	}, 750);
 }, 750);
 
 async function space() {
