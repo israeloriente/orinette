@@ -1,12 +1,11 @@
 const data = {
     nameUser: 'inunes-o',//  hvan-hov gloyer-p inunes-o
     paramsEx00: [
-        'amigo',
-        'mbunda',
-        'Sinceridade',
-        '42Lis',
-        'exame',
-        'nao_e_tudo'
+        0,
+        4,
+        2,
+        -4,
+        12
     ],
     paramsEx01: [
         'amigo',
