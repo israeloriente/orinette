@@ -1,5 +1,5 @@
 const data = {
-    nameUser: 'inunes-o',//  hvan-hov gloyer-p inunes-o
+    nameUser: 'bde-melo',//  hvan-hov gloyer-p inunes-o
     paramsEx00: [
         0,
         4,
@@ -8,28 +8,25 @@ const data = {
         12
     ],
     paramsEx01: [
-        'amigo',
-        'mbunda',
-        'Sinceridade',
-        '42Lis',
-        'exame',
-        'nao_e_tudo'
+        0,
+        4,
+        2,
+        -4,
+        12
     ],
     paramsEx02: [
-        89897453,
-        2147483647,
-        42,
-        24,
-        -1128,
-        1,
-        0
+        {num: 3, pw: 2},
+        {num: 8, pw: 0},
+        {num: 2, pw: 6},
+        {num: -3, pw: 2},
+        {num: -3, pw: -2},
     ],
     paramsEx03: [
-        {s1: 's', s2: 'asfgd', int: 0},
-        {s1: 'esLo0@*', s2: 'AZcb2', int: 2},
-        {s1: 'A!-=-==', s2: '=nbuct', int: 15},
-        {s1: 'azs', s2: 'a', int: 9},
-        {s1: '34', s2: 'j890i', int: 1},
+        {num: 3, pw: 2},
+        {num: 8, pw: 0},
+        {num: 2, pw: 6},
+        {num: -3, pw: 2},
+        {num: -3, pw: -2},
     ],
     paramsEx04: [
         {s1: 'buS', s2: 'amigo'},
