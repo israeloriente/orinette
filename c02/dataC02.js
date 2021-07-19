@@ -1,5 +1,5 @@
 const data = {
-    nameUser: 'inunes-o',//  jdias-mo gfreitas
+    nameUser: 'vmeyer-s',//  jdias-mo gfreitas
     paramsEx00: [{dest: 'ola', src: 'mundo'},{dest: 'raposa', src: 'mbunda'},{dest: '42Lis', src: '42'}],
     paramsEx01: [{dest: 'ola', src: 'mundo', int: 3},
     {dest: 'ola', src: 'mundo', int: 3},
@@ -64,9 +64,9 @@ const data = {
         'AAIAbb',
         'AIDa2'],
         paramsEx09: [
-        "Ola mundo, o mundo esta ola",
-        'E voce? como vai seu DIA..',
-        "Teste que testa Bem TesT_ADo serA",
+        "OlaMundoola",
+        'evoce?',
+        "serA",
         'heLLo'],
         paramsEx10: [
         {dest: 'alo', src: 'mundo', int: 3},

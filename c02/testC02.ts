@@ -315,9 +315,7 @@ async function ex09() {
 		await data.paramsEx09.forEach(param => {
 			exec('./' + file + ' ' + param,
 				(error, stdout, stderr) => {
-
 					let res = ex09ExtencionUppercase(param);
-
 					// Tratando condicoes
 					(stdout == res) ? console.log('"'+param + '" definido como "' + stdout + '" ✅') : console.log('"'+param + '" É DIFERENTE DE "'+stdout+'" ❌');
 					if (error || stderr) console.log('❌ Encontrado erros com o parametro: ' + param, error);

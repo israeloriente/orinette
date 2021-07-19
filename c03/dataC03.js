@@ -1,5 +1,5 @@
 const data = {
-    nameUser: 'inunes-o',//  hvan-hov gloyer-p inunes-o
+    nameUser: 'ede-alme',//  hvan-hov gloyer-p inunes-o
     paramsEx00: [
         {s1: 'buS', s2: 'amigo'},
         {s1: 'raposa', s2: 'mbunda'},

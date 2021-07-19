@@ -163,9 +163,9 @@ setTimeout(async () => {
 		setTimeout(async () => {
 			space();
 			ex02();
-	// 		setTimeout(async () => {
-	// 			space();
-	// 			ex03();
+			setTimeout(async () => {
+				space();
+				ex03();
 	// 			setTimeout(async () => {
 	// 				space();
 	// 				ex04();
@@ -178,7 +178,7 @@ setTimeout(async () => {
 						}, 750);
 	// 				}, 750);
 	// 			}, 750);
-	// 		}, 750);
+			}, 750);
 		}, 750);
 	}, 750);
 }, 750);
@@ -205,7 +205,10 @@ async function checkNorminete() {
 
 
 function factorial(num) {
-    if (num <= 0) {
+    if (num == 0) {
+        return 1;
+    }
+	if (num < 0) {
         return 0;
     }
     if (num <= 1) {
@@ -216,7 +219,7 @@ function factorial(num) {
 function potencia(num, pw)
 {
 	if (pw<0) return 0;
-	if (pw==0) return num;
+	if (pw==0) return 1;
 	let resultado = 1;
 	for (var i = 0; i < pw; i++){
 		resultado *= num;
